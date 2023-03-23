@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Layout({ children }) {
   const [mode, setMode] = useState(false);
-  console.log(window.location.pathname);
+  // console.log(window.screen.availWidth);
 
   function toggleMode() {
     setMode((state) => {
