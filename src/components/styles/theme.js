@@ -1,17 +1,19 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material";
 
-
-export function theme(mode){
-  // return mode === "light"? "light" : "dark";
-  return createTheme({
-    palette: {
-      mode: mode,
+export const theme = createTheme({
+  palette: {
+    mode: "dark",
+    primary: {
+      main: "#be8f2d",
     },
-  })
-}
+    secondary: {
+      main: "#ff4400",
+    },
+  },
 
-// export const theme = createTheme({
-//   palette: {
-//     mode: toggleMode(),
-//   },
-// });
+  typography: {
+    // htmlFontSize: 10,
+    fontFamily: "Poppins",
+    // fontSize: "2rem"
+  },
+});

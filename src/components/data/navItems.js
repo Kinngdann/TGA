@@ -5,8 +5,8 @@ export const navItems = [
         slug: "/"
     },
     {
-        name: "Awards",
-        slug: "/awards"
+        name: "TGA Nomination",
+        slug: "/nomination"
     },
     {
         name: "Categories",

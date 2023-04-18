@@ -1,5 +1,4 @@
-// import { Typography } from "@mui/material";
-import Hero from "./home/hero";
+import Hero from "./hero";
 import Layout from "./Layout";
 
 export default function Home() {

@@ -15,10 +15,11 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Slide from "@mui/material/Slide";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+// import Brightness4Icon from "@mui/icons-material/Brightness4";
+// import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { navItems } from "./data/navItems";
 import logo from "./images/logo.jpg";
+import { useState } from "react";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -45,11 +46,11 @@ HideOnScroll.propTypes = {
   window: PropTypes.func,
 };
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 export default function Navigation(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -57,17 +58,29 @@ export default function Navigation(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Box sx={{ my: 2}}>
+      <Box sx={{ my: 2 }}>
         <img src={logo} alt="logo" width="50" />
       </Box>
       <Divider />
-      <Box sx={{display: "flex", justifyContent: "center", alignContent: "center"}}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignContent: "center",
+        }}
+      >
         <List>
           {navItems.map((item, index) => (
             <ListItem key={index}>
-              <ListItemButton sx={{ textAlign: "center", color: "#be8f2d" }} href={item.slug}>
-              <ListItemText primary={item.name.toUpperCase()} />
-            </ListItemButton>
+              <ListItemButton
+                sx={{
+                  textAlign: "center",
+                  color: "#be8f2d",
+                }}
+                href={item.slug}
+              >
+                <ListItemText primary={item.name.toUpperCase()} />
+              </ListItemButton>
             </ListItem>
           ))}
         </List>
@@ -132,13 +145,6 @@ export default function Navigation(props) {
                 </Button>
               ))}
             </Box>
-            <IconButton
-              sx={{ ml: 1 }}
-              onClick={props.toggleMode}
-              color="inherit"
-            >
-              {props.mode ? <Brightness4Icon /> : <Brightness7Icon />}
-            </IconButton>
           </Toolbar>
         </AppBar>
       </HideOnScroll>

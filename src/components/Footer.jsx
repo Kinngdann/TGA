@@ -4,9 +4,6 @@ import { Box } from "@mui/system";
 import IconButton from "@mui/material/IconButton";
 import { Link } from "react-router-dom";
 import { socialIconList } from "./data/socials";
-import img from "./images/img.png";
-
-
 
 const useStyles = makeStyles({
   link: {
@@ -26,10 +23,12 @@ export default function Footer() {
         color: "#fff",
         width: "100%",
         backgroundColor: "#1e1e1e",
-        pt: 5
+        pt: 2,
       }}
     >
-      <Typography sx={{color: "#be8f2d", fontWeight: "bold" }}>GET SOCIAL WITH US!</Typography>
+      <Typography sx={{ color: "#be8f2d", fontWeight: "bold" }}>
+        GET SOCIAL WITH US!
+      </Typography>
       <Box
         sx={{
           mt: 1,
@@ -50,10 +49,7 @@ export default function Footer() {
           </IconButton>
         ))}
       </Box>
-      <Box sx={{my: 5}}>
-        <img src={img} alt="logo" width="200" />
-      </Box>
-      <Box sx={{ backgroundColor: "#000", p: 2 }}>
+      <Box sx={{ backgroundColor: "#000", p: 2, mt: 2 }}>
         <Typography variant="p" fontSize=".8rem">
           © Copyright {new Date().getFullYear()} The Grand Awards. All rights
           reserved. <br />
