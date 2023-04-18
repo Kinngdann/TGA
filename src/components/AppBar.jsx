@@ -138,8 +138,8 @@ export default function Navigation(props) {
               {navItems.map((item, index) => (
                 <Button
                   key={index}
-                  sx={{ color: "#fff" }}
-                  href={`/${item.slug}`}
+                  sx={{ color: "#fff", fontWeight: "bold" }}
+                  href={`${item.slug}`}
                 >
                   {item.name}
                 </Button>
